@@ -1,0 +1,14 @@
+.header{
+    color: brown;
+    text-align: center;
+}
+
+/* .footer:hover{
+    background-color: blue;
+    color: blanchedalmond;
+}  */
+
+ .header:hover{
+    background-color: brown;
+  color:blanchedalmond;
+ }
