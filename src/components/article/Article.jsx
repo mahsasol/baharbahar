@@ -1,13 +1,16 @@
 import styled from "./article.module.css"
 import holiday from "../../assets/images/holidaysbluepik.jpg"
 
-function Article() {
+function Article(props) {
+    console.log(props.article.title)
+
     return (
+
         <div className={styled.articleWrapper}>
-           <img src={holiday}/>
-           
-            <h3>متغیر ها در اسکریپت</h3>
-            <p> خواندن 5 دقیقه ای </p>
+            <img src={props.article.imageUrl} />
+
+            <h3>{props.article.title}</h3>
+            <p> خواندن {props.article.readingTime} دقیقه ای </p>
 
         </div>
     )
