@@ -2,10 +2,13 @@ import { useEffect, useState } from "react";
 import Article from "../../components/article/Article";
 import Navbar from "../../components/navbar/Navbar";
 import styled from "./home.module.css";
-import pic from "../../assets/images/christmas.jpg";
+// import pic from "../../assets/images/christmas.jpg";
+// import { error } from "ajv/dist/vocabularies/applicator/dependencies";
 import axios from "axios";
-import { error } from "ajv/dist/vocabularies/applicator/dependencies";
 import Footer from "../../components/footer/Footer";
+
+
+
 
 function Home() {
     const [articles, setArticles] = useState([]);
@@ -35,7 +38,9 @@ function Home() {
                     ))}
                 </div>
             </div>
+          
             <Footer/>
+
         </div>
     );
 }
