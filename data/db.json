@@ -1,31 +1,31 @@
 {
     "articles": {
         "status": true,
-        "message":"success",
+        "message": "success",
         "data": [
             {
                 "id": 1,
-                "imageUrl": "",
-                "title": "test 1",
+                "imageUrl":"pic ",
+                "title": "Merry christmas",
                 "readingTime": 5
             },
             {
                 "id": 2,
-                "imageUrl": "",
-                "title": "test 2",
-                "readingTime": 5
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQZNbBDfufCWFtWbhFUhcCzIW-iUGB1YQLERA&s",
+                "title": "Cristmas cookies",
+                "readingTime": 2
             },
             {
                 "id": 3,
-                "imageUrl": "",
-                "title": "test 3",
-                "readingTime":6
+                "imageUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRs_7V8MrvBvH0gosNs-LKMjtXncM6-mBD6jw&s",
+                "title": "Gift for cristmas",
+                "readingTime": 7
             },
             {
                 "id": 4,
-                "imageUrl": "",
-                "title": "test 4",
-                "readingTime": 8
+                "imageUrl": "https://images.rawpixel.com/image_800/czNmcy1wcml2YXRlL3Jhd3BpeGVsX2ltYWdlcy93ZWJzaXRlX2NvbnRlbnQvbHIvcHgxMjYzNzMwLWltYWdlLWt3dnkwejc4LmpwZw.jpg",
+                "title": "Make cristmas tree and gift",
+                "readingTime": 4
             }
         ]
     }

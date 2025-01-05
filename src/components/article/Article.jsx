@@ -2,8 +2,7 @@ import styled from "./article.module.css"
 import holiday from "../../assets/images/holidaysbluepik.jpg"
 
 function Article(props) {
-    console.log(props.article.title)
-
+ 
     return (
 
         <div className={styled.articleWrapper}>
