@@ -1,13 +1,14 @@
-.homeWrapper {}
+
 
 .homeWrapper h2 {
     text-align: right;
     margin-top: 60px;
     font-size: 20px;
-    margin-bottom: 30px;
+  
 }
 
 .articles {
+    margin-top: 40px;
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;

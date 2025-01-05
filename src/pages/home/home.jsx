@@ -5,6 +5,7 @@ import styled from "./home.module.css";
 import pic from "../../assets/images/christmas.jpg";
 import axios from "axios";
 import { error } from "ajv/dist/vocabularies/applicator/dependencies";
+import Footer from "../../components/footer/Footer";
 
 function Home() {
     const [articles, setArticles] = useState([]);
@@ -29,11 +30,12 @@ function Home() {
                 <h2>مقالات جدید</h2>
 
                 <div className={styled.articles}>
-                    {articles.map((article) => (
-                        <Article key={article.id} article={article} />
+                    {articles.map((result) => (
+                        <Article key={result.id} article={result} />
                     ))}
                 </div>
             </div>
+            <Footer/>
         </div>
     );
 }
