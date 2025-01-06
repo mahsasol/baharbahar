@@ -6,6 +6,7 @@ import styled from "./home.module.css";
 // import { error } from "ajv/dist/vocabularies/applicator/dependencies";
 import axios from "axios";
 import Footer from "../../components/footer/Footer";
+import { Link } from "react-router-dom";
 
 
 
@@ -20,8 +21,8 @@ function Home() {
             .then((result) => {
                 setArticles(result.data);
             })
-            .catch((error)=>{
-              console.log(error);  
+            .catch((error) => {
+                console.log(error);
             })
     }, []);
 
@@ -33,13 +34,15 @@ function Home() {
                 <h2>مقالات جدید</h2>
 
                 <div className={styled.articles}>
-                    {articles.map((result) => (
-                        <Article key={result.id} article={result} />
+                    {articles.map((article) => (
+                        <Link to={`/article/${article.id}`}>
+                            <Article key={article.id} article={article} />
+                        </Link>
                     ))}
                 </div>
             </div>
-          
-            <Footer/>
+
+            <Footer />
 
         </div>
     );
