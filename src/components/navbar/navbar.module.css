@@ -8,7 +8,7 @@
     justify-content: end;
     align-items: center;
     flex-direction: row-reverse;
-    
+    margin-bottom: 40px;
 }
 
 .header li:hover {

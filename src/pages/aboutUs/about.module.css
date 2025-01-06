@@ -1,0 +1,15 @@
+.aboutPage{
+    text-align: center;
+}
+.aboutPage h2{
+
+    text-align: right;
+}
+.aboutPage p{
+    margin-top: 30px;
+    text-align: right;
+}
+.aboutPage h4{
+    margin: 40px;
+    color: rgb(0, 145, 255);
+}
