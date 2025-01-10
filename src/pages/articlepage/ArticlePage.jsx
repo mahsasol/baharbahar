@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { error } from "ajv/dist/vocabularies/applicator/dependencies";
+import Spinner from "../../components/spinner/spinner";
 
 function ArticlePage() {
     const [article, setArticle] = useState({});
@@ -38,7 +39,7 @@ function ArticlePage() {
                 <div className="container">
 
                     {
-                        isLoading ? (<p>لطفا چند لحظه صبر کنید...</p>) : (
+                        isLoading ? (<Spinner />) : (
                             <>
                                 <h1>{article.title} </h1>
 
