@@ -8,18 +8,25 @@ import axios from "axios";
 import { error } from "ajv/dist/vocabularies/applicator/dependencies";
 
 function ArticlePage() {
-    const [ article, setArticle]=useState({});
+    const [article, setArticle] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
 
     const params = useParams();
+
     useEffect(() => {
+
+        setIsLoading(true)
+        // api call 
         axios.get(`http://localhost:8000/articles/${params.id}`)
             .then((result) => {
                 setArticle(result.data);
+                setIsLoading(false)
             })
-            .catch((error)=>{
+            .catch((error) => {
                 console.log(error)
-            })
-    })
+                setIsLoading(false)
+            });
+    },[]);
 
     return (
 
@@ -30,19 +37,26 @@ function ArticlePage() {
 
                 <div className="container">
 
-                    <h1>{article.title} </h1>
+                    {
+                        isLoading ? (<p>لطفا چند لحظه صبر کنید...</p>) : (
+                            <>
+                                <h1>{article.title} </h1>
 
-                    <div className={styled.articleinfo}>
+                                <div className={styled.articleinfo}>
 
-                        <span> تاریخ:{article.date} </span>
-                        <span> نویسنده:{article.athor}  </span>
-                        <span> مدت زمان خواندن: {article.readingTime} دقیقه </span>
+                                    <span> تاریخ:{article.date} </span>
+                                    <span> نویسنده:{article.athor}  </span>
+                                    <span> مدت زمان خواندن: {article.readingTime} دقیقه </span>
 
-                    </div>
+                                </div>
 
-                    <img src={article.imageUrl}  />
+                                <img src={article.imageUrl} />
 
-                    <p>{article.content}</p>
+                                <p>{article.content}</p>
+                            </> )
+                    }
+
+
 
                 </div>
 

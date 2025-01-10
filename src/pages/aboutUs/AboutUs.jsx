@@ -6,6 +6,7 @@ import Footer from "../../components/footer/Footer"
 function AboutUs() {
     return (
 
+      <>
         <div className={styled.aboutPage}>
             <Navbar title="bahar blog" />
 
@@ -28,6 +29,7 @@ function AboutUs() {
 
             <Footer/>
         </div>
+      </>
     )
 }
 export default AboutUs

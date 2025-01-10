@@ -7,13 +7,13 @@ import { Route,Routes } from "react-router-dom";
 
 function App() {
   return (
-    <div>
+    <>
       <Routes>
         <Route path="/" element={<Home/>}></Route>
         <Route path="/aboutus" element={<AboutUs/>}></Route>
         <Route path="/article/:id" element={<ArticlePage/>}></Route>
       </Routes>
-    </div>
+    </>
   );
 }
 
