@@ -24,6 +24,11 @@ function Navbar(props) {
                             <Link to={"/AboutUs"}> درباره</Link>
 
                         </li>
+                        <li>
+
+                            <Link to={"/create-article"}> ساخت مقاله</Link>
+
+                        </li>
                     </ul>
                 </div>
             </div>
