@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 
 function Navbar(props) {
 
-    console.log(props)
+    
 
     return (
         <div className={styled.headerWrapper}>

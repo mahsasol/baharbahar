@@ -3,16 +3,32 @@ import Navbar from "../../components/navbar/Navbar"
 import { useState } from "react";
 
 function CreateArticle() {
-    
-    const [articleTitle, setArticleTitle] =useState("")
-    
 
-   
-    const handleChangeArticle =(e) =>{
-        setArticleTitle(e.target.value);
+    const [article, setArticle] = useState({
+        title: "",
+        date: ""
+    })
+
+    const handleChangeArticle = (e) => {
+
+        switch (e.target.name) {
+            case "title":
+                setArticle({
+                    title: e.target.value
+                })
+                break;
+
+            case "date":
+                setArticle({
+                    date: e.target.value
+                })
+                break;
+        }
     }
-    console.log(articleTitle);
-    
+
+
+    console.log(article);
+
 
     // const [counter, setCounter] = useState(0)
 
@@ -22,6 +38,7 @@ function CreateArticle() {
     // const decreaseToCounter = () => {
     //     setCounter(counter - 1)
     // }
+    console.log(article);
 
     return (
         <>
@@ -33,10 +50,14 @@ function CreateArticle() {
                     <h1>ساخت مقاله</h1>
 
                     <div className={styled.inputWrapper}>
-                        <label> عنوان</label>
-                        <input onChange={handleChangeArticle} type="text" />
+                        <label>عنوان</label>
+                        <input name="title" onChange={handleChangeArticle} type="text" />
                     </div>
 
+                    <div className={styled.inputWrapper}>
+                        <label> تاریخ</label>
+                        <input name="date" onChange={handleChangeArticle} type="text" />
+                    </div>
 
 
                     {/* <button onClick={increaseToCounter}>افزایش</button>
