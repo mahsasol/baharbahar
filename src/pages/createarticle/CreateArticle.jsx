@@ -13,21 +13,23 @@ function CreateArticle() {
 
         switch (e.target.name) {
             case "title":
-                setArticle({
+                setArticle((prevState) => ({
+                    ...prevState,
                     title: e.target.value
-                })
+                }))
                 break;
 
             case "date":
-                setArticle({
-                    date: e.target.value
-                })
+             setArticle((prevState)=> ({
+                ...prevState,
+                date : e.target.value
+             }))
                 break;
         }
     }
 
 
-    console.log(article);
+   console.log(article)
 
 
     // const [counter, setCounter] = useState(0)
@@ -38,7 +40,7 @@ function CreateArticle() {
     // const decreaseToCounter = () => {
     //     setCounter(counter - 1)
     // }
-    console.log(article);
+ 
 
     return (
         <>
