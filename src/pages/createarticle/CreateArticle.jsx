@@ -3,14 +3,25 @@ import Navbar from "../../components/navbar/Navbar"
 import { useState } from "react";
 
 function CreateArticle() {
-    const [counter, setCounter] = useState(0)
+    
+    const [articleTitle, setArticleTitle] =useState("")
+    
 
-    const increaseToCounter = () => {
-        setCounter(counter + 1)
+   
+    const handleChangeArticle =(e) =>{
+        setArticleTitle(e.target.value);
     }
-    const decreaseToCounter = () => {
-        setCounter(counter - 1)
-    }
+    console.log(articleTitle);
+    
+
+    // const [counter, setCounter] = useState(0)
+
+    // const increaseToCounter = () => {
+    //     setCounter(counter + 1)
+    // }
+    // const decreaseToCounter = () => {
+    //     setCounter(counter - 1)
+    // }
 
     return (
         <>
@@ -21,9 +32,16 @@ function CreateArticle() {
 
                     <h1>ساخت مقاله</h1>
 
-                    <button onClick={increaseToCounter}>افزایش</button>
+                    <div className={styled.inputWrapper}>
+                        <label> عنوان</label>
+                        <input onChange={handleChangeArticle} type="text" />
+                    </div>
+
+
+
+                    {/* <button onClick={increaseToCounter}>افزایش</button>
                     <span>{counter}</span>
-                    <button onClick={decreaseToCounter}>کاهش</button>
+                    <button onClick={decreaseToCounter}>کاهش</button> */}
 
                 </div>
             </div>

@@ -4,3 +4,16 @@
     font-size: 18px;
     font-weight: 300;
 }
+.inputWrapper{
+
+}
+.inputWrapper label{
+    display: block;
+    margin-bottom: 5px;
+    text-align: right;
+}
+.inputWrapper input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+}
