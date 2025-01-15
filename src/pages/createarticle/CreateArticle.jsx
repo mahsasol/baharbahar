@@ -3,33 +3,36 @@ import Navbar from "../../components/navbar/Navbar"
 import { useState } from "react";
 
 function CreateArticle() {
-
     const [article, setArticle] = useState({
         title: "",
-        date: ""
-    })
+        date: "",
+    });
 
     const handleChangeArticle = (e) => {
+        setArticle((prevState) => ({
+            ...prevState,
+            [e.target.name]: e.target.value,
+        }));
 
-        switch (e.target.name) {
-            case "title":
-                setArticle((prevState) => ({
-                    ...prevState,
-                    title: e.target.value
-                }))
-                break;
+        // switch (e.target.name) {
+        //     case "title":
+        //         setArticle((prevState) => ({
+        //             ...prevState,
+        //             title: e.target.value
+        //         }))
+        //         break;
 
-            case "date":
-             setArticle((prevState)=> ({
-                ...prevState,
-                date : e.target.value
-             }))
-                break;
-        }
-    }
+        //     case "date":
+        //      setArticle((prevState)=> ({
+        //         ...prevState,
+        //         date : e.target.value
+        //      }))
+        //         break;
+        // }
+    };
 
 
-   console.log(article)
+   console.log(article);
 
 
     // const [counter, setCounter] = useState(0)
@@ -61,6 +64,17 @@ function CreateArticle() {
                         <input name="date" onChange={handleChangeArticle} type="text" />
                     </div>
 
+
+                    <div className={styled.inputWrapper}>
+                        <label> مدت زمان خواندن </label>
+                        <input name="readingTime" onChange={handleChangeArticle} type="text" />
+                    </div>
+
+                    
+                    <div className={styled.inputWrapper}>
+                        <label> نویسنده</label>
+                        <input name="athor" onChange={handleChangeArticle} type="text" />
+                    </div>
 
                     {/* <button onClick={increaseToCounter}>افزایش</button>
                     <span>{counter}</span>
