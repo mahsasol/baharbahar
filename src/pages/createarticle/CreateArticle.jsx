@@ -1,5 +1,6 @@
 import styled from "./createArticle.module.css"
 import Navbar from "../../components/navbar/Navbar"
+import Input from "../../components/input/Input";
 import { useState } from "react";
 
 function CreateArticle() {
@@ -30,10 +31,7 @@ function CreateArticle() {
         //         break;
         // }
     };
-
-
-   console.log(article);
-
+    console.log(article);
 
     // const [counter, setCounter] = useState(0)
 
@@ -43,7 +41,6 @@ function CreateArticle() {
     // const decreaseToCounter = () => {
     //     setCounter(counter - 1)
     // }
- 
 
     return (
         <>
@@ -53,13 +50,14 @@ function CreateArticle() {
 
 
                     <h1>ساخت مقاله</h1>
+                    <Input label="عنوان" name="title" change={handleChangeArticle} type="text"/>
+                    <Input label="تاریخ" name="date" change={handleChangeArticle} type="text"/>
+                    <Input label="مدت زمان خواندن" name="readingTime" change={handleChangeArticle} type="text"/>
+                    <Input label="نویسنده" name="athor" change={handleChangeArticle} type="text"/>
+                
+                    
 
-                    <div className={styled.inputWrapper}>
-                        <label>عنوان</label>
-                        <input name="title" onChange={handleChangeArticle} type="text" />
-                    </div>
-
-                    <div className={styled.inputWrapper}>
+                    {/* <div className={styled.inputWrapper}>
                         <label> تاریخ</label>
                         <input name="date" onChange={handleChangeArticle} type="text" />
                     </div>
@@ -74,7 +72,7 @@ function CreateArticle() {
                     <div className={styled.inputWrapper}>
                         <label> نویسنده</label>
                         <input name="athor" onChange={handleChangeArticle} type="text" />
-                    </div>
+                    </div> */}
 
                     {/* <button onClick={increaseToCounter}>افزایش</button>
                     <span>{counter}</span>
@@ -82,11 +80,7 @@ function CreateArticle() {
 
                 </div>
             </div>
-
-
-
         </>
-
     )
 }
 export default CreateArticle;
