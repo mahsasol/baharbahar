@@ -2,11 +2,16 @@ import styled from "./createArticle.module.css"
 import Navbar from "../../components/navbar/Navbar"
 import Input from "../../components/input/Input";
 import { useState } from "react";
+import TextArea from "../../components/textarea/TextArea";
+import Footer from "../../components/footer/Footer";
 
 function CreateArticle() {
     const [article, setArticle] = useState({
         title: "",
         date: "",
+        readinTime: "",
+        athor:"",
+        message:"",
     });
 
     const handleChangeArticle = (e) => {
@@ -31,6 +36,13 @@ function CreateArticle() {
         //         break;
         // }
     };
+    const handleChangeArticleMessage =(e)=>{
+        setArticle((prevState) => ({
+            ...prevState,
+            message: e.target.value,
+        }));
+    }
+
     console.log(article);
 
     // const [counter, setCounter] = useState(0)
@@ -50,12 +62,34 @@ function CreateArticle() {
 
 
                     <h1>ساخت مقاله</h1>
-                    <Input label="عنوان" name="title" change={handleChangeArticle} type="text"/>
-                    <Input label="تاریخ" name="date" change={handleChangeArticle} type="text"/>
-                    <Input label="مدت زمان خواندن" name="readingTime" change={handleChangeArticle} type="text"/>
-                    <Input label="نویسنده" name="athor" change={handleChangeArticle} type="text"/>
+                    <Input 
+                     label="عنوان"
+                     name="title"
+                     change={handleChangeArticle} 
+                     type="text"
+                    />
+                    <Input 
+                     label="تاریخ" 
+                     name="date" 
+                     change={handleChangeArticle} 
+                     type="text"
+                    />
+                    <Input 
+                     label="مدت زمان خواندن" 
+                     name="readingTime" 
+                     change={handleChangeArticle} 
+                     type="text"
+                    />
+                    <Input 
+                     label="نویسنده" 
+                     name="athor" 
+                     change={handleChangeArticle} 
+                     type="text"
+                    />
                 
-                    
+                    <TextArea label="" handleChange={handleChangeArticleMessage}/>
+
+
 
                     {/* <div className={styled.inputWrapper}>
                         <label> تاریخ</label>
@@ -79,7 +113,9 @@ function CreateArticle() {
                     <button onClick={decreaseToCounter}>کاهش</button> */}
 
                 </div>
+                
             </div>
+            <Footer/>
         </>
     )
 }
