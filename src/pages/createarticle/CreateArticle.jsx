@@ -87,7 +87,7 @@ function CreateArticle() {
                      type="text"
                     />
                 
-                    <TextArea label="" handleChange={handleChangeArticleMessage}/>
+                    <TextArea label="متن" handleChange={handleChangeArticleMessage}/>
 
 
 
