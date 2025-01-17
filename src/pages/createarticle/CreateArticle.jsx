@@ -4,14 +4,16 @@ import Input from "../../components/input/Input";
 import { useState } from "react";
 import TextArea from "../../components/textarea/TextArea";
 import Footer from "../../components/footer/Footer";
+import axios from "axios";
 
 function CreateArticle() {
     const [article, setArticle] = useState({
         title: "",
         date: "",
-        readinTime: "",
-        athor:"",
-        message:"",
+        readingTime: "",
+        athor: "",
+        message: "",
+        imageUrl:"",
     });
 
     const handleChangeArticle = (e) => {
@@ -36,14 +38,15 @@ function CreateArticle() {
         //         break;
         // }
     };
-    const handleChangeArticleMessage =(e)=>{
+    const handleChangeArticleMessage = (e) => {
         setArticle((prevState) => ({
             ...prevState,
             message: e.target.value,
         }));
-    }
+    };
 
-    console.log(article);
+
+    // console.log(article);
 
     // const [counter, setCounter] = useState(0)
 
@@ -53,7 +56,21 @@ function CreateArticle() {
     // const decreaseToCounter = () => {
     //     setCounter(counter - 1)
     // }
+    const handleCreateNewArticle = () => {
+        // api call 
+        // console.log(article);
+        axios.post("http://localhost:8000/articles",{
+            id: 9,
+            title: article.title,
+            date: article.date,
+            readingTime: article.readingTime,
+            athor: article.athor,
+            imageUrl: article.imageUrl,
+            content: article.message,
 
+        });
+        
+    }
     return (
         <>
             <Navbar title="Bahar Blog" />
@@ -62,34 +79,42 @@ function CreateArticle() {
 
 
                     <h1>ساخت مقاله</h1>
-                    <Input 
-                     label="عنوان"
-                     name="title"
-                     change={handleChangeArticle} 
-                     type="text"
+                    <Input
+                        label="عنوان"
+                        name="title"
+                        change={handleChangeArticle}
+                        type="text"
                     />
-                    <Input 
-                     label="تاریخ" 
-                     name="date" 
-                     change={handleChangeArticle} 
-                     type="text"
+                    <Input
+                        label="تاریخ"
+                        name="date"
+                        change={handleChangeArticle}
+                        type="text"
                     />
-                    <Input 
-                     label="مدت زمان خواندن" 
-                     name="readingTime" 
-                     change={handleChangeArticle} 
-                     type="text"
+                    <Input
+                        label="مدت زمان خواندن"
+                        name="readingTime"
+                        change={handleChangeArticle}
+                        type="text"
                     />
-                    <Input 
-                     label="نویسنده" 
-                     name="athor" 
-                     change={handleChangeArticle} 
-                     type="text"
+                    <Input
+                        label="نویسنده"
+                        name="athor"
+                        change={handleChangeArticle}
+                        type="text"
                     />
-                
-                    <TextArea label="متن" handleChange={handleChangeArticleMessage}/>
+                    <Input
+                        label="آدرس عکس"
+                        name="imageUrl"
+                        change={handleChangeArticle}
+                        type="text"
+                    />
 
+                    <TextArea label="متن" name="message" handleChange={handleChangeArticleMessage} />
 
+                    <div className={styled.buttonWrapper}> 
+                        <button onClick={handleCreateNewArticle}> ساخت مقاله </button>
+                    </div>
 
                     {/* <div className={styled.inputWrapper}>
                         <label> تاریخ</label>
@@ -113,9 +138,9 @@ function CreateArticle() {
                     <button onClick={decreaseToCounter}>کاهش</button> */}
 
                 </div>
-                
+
             </div>
-            <Footer/>
+            <Footer />
         </>
     )
 }

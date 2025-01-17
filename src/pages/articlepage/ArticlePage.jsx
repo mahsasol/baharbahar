@@ -12,7 +12,7 @@ function ArticlePage() {
     const [article, setArticle] = useState({});
     const [isLoading, setIsLoading] = useState(false);
 
-    const params = useParams();
+    const params = useParams()
 
     useEffect(() => {
 
