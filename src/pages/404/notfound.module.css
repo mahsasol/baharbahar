@@ -1,0 +1,15 @@
+.notFoundWrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+.notFoundWrapper h1{
+    display: flex;
+    padding: 40px;
+    text-align: center;
+    color: blue;
+    font-size: 100px;
+    width: 200px;
+}
