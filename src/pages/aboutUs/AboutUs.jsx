@@ -8,7 +8,7 @@ function AboutUs() {
 
       <>
         <div className={styled.aboutPage}>
-            <Navbar title="bahar blog" />
+            <Navbar title="Bahar Blog" />
 
             <div className="container">
                 <h2>درباره ما</h2>
